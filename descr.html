@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Подключение к Интернет</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/map.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+        <style type="text/css">
+            html, body { height: 100%; margin: 0; padding: 0; }
+            #map { height: 45%; width: 75%; margin-top: 60px; text-align:center; }
+        </style>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+    </head>
+    <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Карта</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="full_info.html">Общая информация</a></li>
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+</div>
+
+
+<div id="map" class="container"></div>
+<div class="container"><p>Ситуационный план</p></div>
+
+<script type="text/javascript">
+
+var map;
+var markers=[];
+var local1 = [{lat:51.545802072395325, lng:46.01183449999993},{lat:51.53776407237467, lng:46.015976},{lat:51.53957881148125, lng:46.00152678748319},{lat:51.545802072395325, lng:46.01183449999993}];
+
+var local2 = [{lat:51.55552457239208,lng:45.998467499999975},{lat:51.55446456667278,lng:45.99659901108451}];
+ymaps.ready(initMap);
+function initMap() {
+  map = new ymaps.Map('map', {
+      center: [51.533333,46.000000], 
+      zoom: 12
+  });
+
+  $.get('markers.xml', function(data){
+     a = $(data).find('marker').each(function(){
+        var name = $(this).find('name').text();
+        var lat = $(this).find('lat').text();
+        var lng = $(this).find('lng').text();
+        var address = $(this).find('address').text();
+        if (name.indexOf('2') > -1){
+                        
+      var html=ymaps.templateLayoutFactory.createClass('<h4>'+name+'</h4>'+'<p>Адрес учреждения: '+address+'</p>'+
+                '<a class="single_image" href="img/out0002.jpg" data-lightbox="out0002" data-title="My caption"><img src="img/out0002.jpg" data-lightbox="out0002" data-title="My caption" width="400" height="300" alt="план помещения" class="img-thumbnail"></a>');
+      var marker = new ymaps.Placemark(
+              [lat,lng],
+              {hintContent: name,
+            },
+            {
+              balloonContentLayout: html
+            });
+            markers.push(marker);
+            map.geoObjects.add(marker);
+        }
+     });
+    /* var localNet1 = new google.maps.Polyline({
+      path: local1,
+      geodesic:true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+     });
+     localNet1.setMap(map);
+     var localNet2 = new google.maps.Polyline({
+      path: local2,
+      geodesic:true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+     });
+     localNet2.setMap(map);*/
+    //var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'images/m'});
+  });
+  
+  
+}
+
+
+    </script>
+<div class="container" id="container">
+
+<h4>ГУЗ "Саратовская городская поликлиника № 2"</h4>
+<!-- Subdivisions -->
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        ЛПО 1</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <div class="row" id="row">
+        <div class="col col-sm-4">
+                  <div class="thumbnail">
+                  <a href="img/out0002.jpg" data-lightbox="image-1" data-title="My caption">
+                    <img src="img/out0002.jpg" style="width:100%" data-lightbox="out0002" data-title="Схема расположения" class="img-thumbnail">
+                    <div class="caption">
+                      <p>Схема расположения</p>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                <div class="col col-sm-8">
+                  <p>Адрес ТВП: <b>ул. Железнодорожная 61/69</b></p>
+                  <p>Тип подключения: <b>Оптоволокно</b></p>
+                  <p>Максимально возможная пропускная способность канала Мбит/с: <b>100 Мбит/с</b></p>
+                  <p>Фактическая пропускная способность канала Мбит/с: <b>50 Мбит/с</b></p>
+                  <p>В даноом ТВП ведется амбулаторный прием пациентов: <b>да</b></p>
+                  <p>Количество регистраторов, работающих в одну смену: <b>7</b></p>
+                  <p>Общее количество врачей поликлиники в данном ТВП: <b>102</b></p>
+                  <p>Количество врачей поликлиники, ведущих прием в одну смену в данном ТВП: <b>67</b></p>
+                  <p>Количество врачей стационара в данном ТВП: <b>6</b></p>
+                  <p>Количество медицинских работников стационара (кроме врачей), работающих в одну смену в данном ТВП: <b>3</b></p>
+                  <p>Провайдер: <b>Ренет</b></p>
+                </div>
+              </div>
+              <hr>
+              <h3>Количество АРМ, подключенных к РФ ЕГИСЗ</h3>
+              <div id="table">
+                    <table id="table" class="table table-hover">
+                    <thead>
+                      <tr><th>Общее кол-во АРМ, подключенных к РФ ЕГИСЗ</th><th>АРМ медицинских работников поликлиники</th><th>АРМ медицинских работников стационара</th><th>АРМ прочих специалистов МО, работающих в РФ ЕГИСЗ</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>141</td><td>94</td><td>5</td><td>42</td></tr>
+                      
+                    </tbody>
+                    </table>
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        ЛПО 2</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+              <div class="row" id="row">
+        <div class="col col-sm-4">
+                  <div class="thumbnail">
+                  <a href="img/out0002.jpg" data-lightbox="image-1" data-title="My caption">
+                    <img src="img/out0002.jpg" style="width:100%" data-lightbox="out0002" data-title="Схема расположения" class="img-thumbnail">
+                    <div class="caption">
+                      <p>Схема расположения</p>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                <div class="col col-sm-8">
+                  <p>Адрес ТВП: <b>ул. Украинская 6</b></p>
+                  <p>Тип подключения: <b>Оптоволокно</b></p>
+                  <p>Максимально возможная пропускная способность канала Мбит/с: <b>100 Мбит/с</b></p>
+                  <p>Фактическая пропускная способность канала Мбит/с: <b>15 Мбит/с</b></p>
+                  <p>В даноом ТВП ведется амбулаторный прием пациентов: <b>да</b></p>
+                  <p>Количество регистраторов, работающих в одну смену: <b>3</b></p>
+                  <p>Общее количество врачей поликлиники в данном ТВП: <b>23</b></p>
+                  <p>Количество врачей поликлиники, ведущих прием в одну смену в данном ТВП: <b>15</b></p>
+                  <p>Количество врачей стационара в данном ТВП: <b>-</b></p>
+                  <p>Количество медицинских работников стационара (кроме врачей), работающих в одну смену в данном ТВП: <b>-</b></p>
+                  <p>Провайдер: <b>Ренет</b></p>
+                </div>
+              </div>
+              <hr>
+              <h3>Количество АРМ, подключенных к РФ ЕГИСЗ</h3>
+              <div id="table">
+                    <table id="table" class="table table-hover">
+                    <thead>
+                      <tr><th>Общее кол-во АРМ, подключенных к РФ ЕГИСЗ</th><th>АРМ медицинских работников поликлиники</th><th>АРМ медицинских работников стационара</th><th>АРМ прочих специалистов МО, работающих в РФ ЕГИСЗ</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>21</td><td>18</td><td>-</td><td>3</td></tr>
+                      
+                    </tbody>
+                    </table>
+              </div>
+        </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        ЛПО 3</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+              <div class="row" id="row">
+        <div class="col col-sm-4">
+                  <div class="thumbnail">
+                  <a href="img/out0002.jpg" data-lightbox="image-1" data-title="My caption">
+                    <img src="img/out0002.jpg" style="width:100%" data-lightbox="out0002" data-title="Схема расположения" class="img-thumbnail">
+                    <div class="caption">
+                      <p>Схема расположения</p>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                <div class="col col-sm-8">
+                  <p>Адрес ТВП: <b>ул. Дачная 43</b></p>
+                  <p>Тип подключения: <b>Оптоволокно</b></p>
+                  <p>Максимально возможная пропускная способность канала Мбит/с: <b>100 Мбит/с</b></p>
+                  <p>Фактическая пропускная способность канала Мбит/с: <b>5 Мбит/с</b></p>
+                  <p>В даноом ТВП ведется амбулаторный прием пациентов: <b>да</b></p>
+                  <p>Количество регистраторов, работающих в одну смену: <b>1</b></p>
+                  <p>Общее количество врачей поликлиники в данном ТВП: <b>-</b></p>
+                  <p>Количество врачей поликлиники, ведущих прием в одну смену в данном ТВП: <b>-</b></p>
+                  <p>Количество врачей стационара в данном ТВП: <b>-</b></p>
+                  <p>Количество медицинских работников стационара (кроме врачей), работающих в одну смену в данном ТВП: <b>-</b></p>
+                  <p>Провайдер: <b>Ренет</b></p>
+                </div>
+              </div>
+              <hr>
+              <h3>Количество АРМ, подключенных к РФ ЕГИСЗ</h3>
+              <div id="table">
+                    <table id="table" class="table table-hover">
+                    <thead>
+                      <tr><th>Общее кол-во АРМ, подключенных к РФ ЕГИСЗ</th><th>АРМ медицинских работников поликлиники</th><th>АРМ медицинских работников стационара</th><th>АРМ прочих специалистов МО, работающих в РФ ЕГИСЗ</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>2</td><td>-</td><td>-</td><td>2</td></tr>
+                      
+                    </tbody>
+                    </table>
+              </div>
+        </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+        ЛПО 4</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+              <div class="row" id="row">
+        <div class="col col-sm-4">
+                  <div class="thumbnail">
+                  <a href="img/out0002.jpg" data-lightbox="image-1" data-title="My caption">
+                    <img src="img/out0002.jpg" style="width:100%" data-lightbox="out0002" data-title="Схема расположения" class="img-thumbnail">
+                    <div class="caption">
+                      <p>Схема расположения</p>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                <div class="col col-sm-8">
+                  <p>Адрес ТВП: <b>ул. ул. Московская 137/139</b></p>
+                  <p>Тип подключения: <b>Оптоволокно</b></p>
+                  <p>Максимально возможная пропускная способность канала Мбит/с: <b>100 Мбит/с</b></p>
+                  <p>Фактическая пропускная способность канала Мбит/с: <b>45 Мбит/с</b></p>
+                  <p>В даноом ТВП ведется амбулаторный прием пациентов: <b>да</b></p>
+                  <p>Количество регистраторов, работающих в одну смену: <b>8</b></p>
+                  <p>Общее количество врачей поликлиники в данном ТВП: <b>68</b></p>
+                  <p>Количество врачей поликлиники, ведущих прием в одну смену в данном ТВП: <b>41</b></p>
+                  <p>Количество врачей стационара в данном ТВП: <b>3</b></p>
+                  <p>Количество медицинских работников стационара (кроме врачей), работающих в одну смену в данном ТВП: <b>3</b></p>
+                  <p>Провайдер: <b>Ренет</b></p>
+                </div>
+              </div>
+              <hr>
+              <h3>Количество АРМ, подключенных к РФ ЕГИСЗ</h3>
+              <div id="table">
+                    <table id="table" class="table table-hover">
+                    <thead>
+                      <tr><th>Общее кол-во АРМ, подключенных к РФ ЕГИСЗ</th><th>АРМ медицинских работников поликлиники</th><th>АРМ медицинских работников стационара</th><th>АРМ прочих специалистов МО, работающих в РФ ЕГИСЗ</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>42</td><td>27</td><td>4</td><td>11</td></tr>
+                      
+                    </tbody>
+                    </table>
+              </div>
+        </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+        ЛПО 5</a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+              <div class="row" id="row">
+        <div class="col col-sm-4">
+                  <div class="thumbnail">
+                  <a href="img/out0002.jpg" data-lightbox="image-1" data-title="My caption">
+                    <img src="img/out0002.jpg" style="width:100%" data-lightbox="out0002" data-title="Схема расположения" class="img-thumbnail">
+                    <div class="caption">
+                      <p>Схема расположения</p>
+                    </div>
+                  </a>
+                </div>
+                </div>
+                <div class="col col-sm-8">
+                  <p>Адрес ТВП: <b>ул. ул. Большая Казачья 120</b></p>
+                  <p>Тип подключения: <b>Оптоволокно</b></p>
+                  <p>Максимально возможная пропускная способность канала Мбит/с: <b>100 Мбит/с</b></p>
+                  <p>Фактическая пропускная способность канала Мбит/с: <b>2 Мбит/с</b></p>
+                  <p>В даноом ТВП ведется амбулаторный прием пациентов: <b>нет</b></p>
+                  <p>Количество регистраторов, работающих в одну смену: <b>1</b></p>
+                  <p>Общее количество врачей поликлиники в данном ТВП: <b>4</b></p>
+                  <p>Количество врачей поликлиники, ведущих прием в одну смену в данном ТВП: <b>4</b></p>
+                  <p>Количество врачей стационара в данном ТВП: <b>-</b></p>
+                  <p>Количество медицинских работников стационара (кроме врачей), работающих в одну смену в данном ТВП: <b>-</b></p>
+                  <p>Провайдер: <b>Ренет</b></p>
+                </div>
+              </div>
+              <hr>
+              <h3>Количество АРМ, подключенных к РФ ЕГИСЗ</h3>
+              <div id="table">
+                    <table id="table" class="table table-hover">
+                    <thead>
+                      <tr><th>Общее кол-во АРМ, подключенных к РФ ЕГИСЗ</th><th>АРМ медицинских работников поликлиники</th><th>АРМ медицинских работников стационара</th><th>АРМ прочих специалистов МО, работающих в РФ ЕГИСЗ</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>4</td><td>-</td><td>-</td><td>-</td></tr>
+                      
+                    </tbody>
+                    </table>
+              </div>
+        </div>
+    </div>
+  </div>
+</div> 
+</div>
+        
+        
+        
+        
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="js/lightbox.js"></script>
+    </body>
+</html>

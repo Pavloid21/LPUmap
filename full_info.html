@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Подключение к Интернет</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style type="text/css">
+          html, body { height: 100%; margin: 0; padding: 0; }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/map.css" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/full.js"></script>
+    </head>
+    <body>
+       
+    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Карта</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="full_info.html">Общая информация</a></li>
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+</div>
+      
+  
+  
+   <div class="container" style="width: 75%">
+  <table id="table" class="table table-hover" style="display: none; width: 70%; float: left">
+             <thead></thead>
+             <tbody></tbody>    
+             <tfoot></tfoot>   
+    </table>
+    <div class="diagram" style="float: left; width: 30%; height: 50px">
+    <canvas id="myChart" width="50" height="50"></canvas>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/Chart.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

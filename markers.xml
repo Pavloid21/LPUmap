@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<markers>
+  <marker>
+    <name>ГУЗ &amp;quot;МИАЦ&amp;quot;</name>
+    <address>ул. Рабочая, д. 145/155</address>
+    <lat>51.53442719</lat>
+    <lng>45.9992221</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Александрово-Гайская РБ&amp;quot;</name>
+    <address>ул.Мирный, д.4</address>
+    <lat>50.141984</lat>
+    <lng>48.586262</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Аркадакская РБ&amp;quot;</name>
+    <address>ул.Ленина, д.85</address>
+    <lat>51.93988</lat>
+    <lng>43.499741</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Аткарская РБ&amp;quot;</name>
+    <address>ул.Вали Макеевой, д.23</address>
+    <lat>51.873626</lat>
+    <lng>45.007851</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Базарно-Карабулакская РБ&amp;quot;</name>
+    <address>ул.Топольчанская, д.2</address>
+    <lat>52.265437</lat>
+    <lng>46.412025</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Балашовская РБ&amp;quot;</name>
+    <address>ул.Красина, д.97</address>
+    <lat>51.538296</lat>
+    <lng>43.161202</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Балтайская РБ&amp;quot;</name>
+    <address>ул.Колхозная, д.1В</address>
+    <lat>52.460895</lat>
+    <lng>46.644315</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Вольская РБ&amp;quot;</name>
+    <address>ул.Львова Роща, д.1</address>
+    <lat>52.05220539819581</lat>
+    <lng>47.37505454896536</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Воскресенская РБ&amp;quot;</name>
+    <address>ул.Зеленая, д.30</address>
+    <lat>51.82766926423324</lat>
+    <lng>46.91808123468008</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Дергачевская РБ&amp;quot;</name>
+    <address>ул.Больничный пр-д, д.35</address>
+    <lat>51.233299952957246</lat>
+    <lng>48.74756126048277</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ СО &amp;quot;Духовницкая РБ&amp;quot;</name>
+    <address>ул.Академика Марчука, д.11</address>
+    <lat>52.473975890274914</lat>
+    <lng>48.202656879501355</lng>
+    <awpCount>0</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ «Саратовская городская поликлиника №2» ЛПО №2</name>
+    <address>ул. Украинская 6</address>
+    <lat>51.55552457239208</lat>
+    <lng>45.998467499999975</lng>
+    <awpCount>21</awpCount>
+    <awpClinicCount>18</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>3</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ «Саратовская городская поликлиника №2» ЛПО №3</name>
+    <address>ул. Дачная 43</address>
+    <lat>51.55446456667278</lat>
+    <lng>45.99659901108451</lng>
+    <awpCount>2</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>2</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ «Саратовская городская поликлиника №2» ЛПО №4</name>
+    <address>ул. Московская 137/139</address>
+    <lat>51.53776407237467</lat>
+    <lng>46.015976</lng>
+    <awpCount>42</awpCount>
+    <awpClinicCount>27</awpClinicCount>
+    <awpHospCount>4</awpHospCount>
+    <awpOtherStaffCount>11</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ «Саратовская городская поликлиника №2» ЛПО №5</name>
+    <address>ул. Большая Казачья 120</address>
+    <lat>51.53957881148125</lat>
+    <lng>46.00152678748319</lng>
+    <awpCount>4</awpCount>
+    <awpClinicCount>0</awpClinicCount>
+    <awpHospCount>0</awpHospCount>
+    <awpOtherStaffCount>0</awpOtherStaffCount>
+  </marker>
+  <marker>
+    <name>ГУЗ «Саратовская городская поликлиника №2» ЛПО №1</name>
+    <address>ул. Железнодорожная 61/69</address>
+    <lat>51.545802072395325</lat>
+    <lng>46.01183449999993</lng>
+    <awpCount>141</awpCount>
+    <awpClinicCount>94</awpClinicCount>
+    <awpHospCount>5</awpHospCount>
+    <awpOtherStaffCount>42</awpOtherStaffCount>
+  </marker>
+</markers>
